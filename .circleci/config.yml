@@ -38,6 +38,7 @@ jobs:
           key: backend-build
 
 workflows:
-  jobs:
-  - build-frontend
-  - build-backend
+  PeojectWorkflow:
+    jobs:
+      - build-frontend
+      - build-backend

@@ -114,7 +114,7 @@ jobs:
           key: backend-scan
   deploy-infrastructure:
     docker:
-      - image: circleci/node:13.8.0
+      - image: amazon/aws-cli
     steps:
       - checkout
       # - run:

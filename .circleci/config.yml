@@ -159,9 +159,6 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints: ["41:c0:fe:34:c5:64:dd:57:d3:02:2e:b1:c8:9f:16:64"]
-      - persist_to_workspace:
-          paths:
-            - project/.circleci/ansible
       - run:
           name: Install dependencies
           command: |
@@ -175,10 +172,10 @@ jobs:
             && pip3 install --no-cache-dir \
             awscli \
             && rm -rf /var/cache/apk/*
-
       - run:
           name: Configure server
           command: |
+            cd .circleci/ansible          
             ansible-playbook -i inventory.txt configure-server.yml
       # Here's where you will add some code to rollback on failure
 workflows:

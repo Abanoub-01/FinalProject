@@ -195,6 +195,8 @@ jobs:
       - checkout
       - restore_cache:
           keys: [backend]
+      - attach_workspace:
+          at: ~/
       - run:
           name: Install AWS CLI dependencies
           working_directory: /tmp
@@ -209,11 +211,6 @@ jobs:
             cd backend
             npm install
             npm fund
-            npm audit fix --audit-level=critical --force
-            npm audit --audit-level=critical
-            npm audit fix
-            npm audit fix --audit-level=critical --force
-            npm audit --audit-level=critical
             npm audit fix
             npm run migrations > ./backend/migrations_dump.txt
       - run:

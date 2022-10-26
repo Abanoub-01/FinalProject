@@ -233,12 +233,12 @@ jobs:
           name: Install dependencies
           command: |
             yes | yum install python37 
-            curl -O https://bootstrap.pypa.io/get-pip.py
-            python3 get-pip.py --user
-            python3 -m pip install --user ansible
-            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-            . ~/.nvm/nvm.sh
-            nvm install --lts
+            curl -O https://bootstrap.pypa.io/get-pip.py \
+            python3 get-pip.py --user \
+            python3 -m pip install --user ansible 
+            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash \
+            . ~/.nvm/nvm.sh \
+            nvm install --lts \
             yum install nodejs npm --enablerepo=epel
       - run:
           name: Get backend url

@@ -129,7 +129,6 @@ jobs:
           name: intall tar and gzip
           command: |
             yum -y install tar gzip
-            
       - run:
           name: Ensure back-end infrastructure exists
           command: |
@@ -224,6 +223,10 @@ jobs:
       - image: amazon/aws-cli
     steps:
       - checkout
+      - run:
+          name: Install tar & gzip
+          command: |
+            yum -y install tar gzip
       - attach_workspace:
           at: ~/
       - run:

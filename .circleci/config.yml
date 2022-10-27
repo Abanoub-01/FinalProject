@@ -348,14 +348,8 @@ jobs:
             else
               return 1
             fi
-      - run:
-          name: destroy environment
-          command:
-            - destroy-environment
-      - run:
-          name: revert migrations
-          command:
-            - revert-migrations
+      - destroy-environment
+      - revert-migrations
 workflows:
   ProjectWorkflow:
     jobs:

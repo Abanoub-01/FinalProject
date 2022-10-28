@@ -305,7 +305,7 @@ jobs:
             ansible-playbook -i inventory.txt deploy-backend.yml
   smoke-test:
     docker:
-      - image: alpine:latest 
+      - image: python:3.7-alpine3.11
     steps:
       - checkout
       - run:
@@ -337,9 +337,9 @@ jobs:
             echo "${API_URL}"
             if curl "${API_URL}/api/status" | grep "ok"
             then
-                return 0
+              return 0
             else
-                return 1
+              return 1
             fi
       - run:
           name: Frontend smoke test.

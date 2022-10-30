@@ -423,10 +423,6 @@ jobs:
             sudo npm install --global n
             sudo n 13.8.0
       - run:
-          name: Install dependencies
-          command: |
-            # your code here
-      - run:
           name: Update cloudfront distribution
           command: |
             export OldWorkflowID=$(aws cloudformation \

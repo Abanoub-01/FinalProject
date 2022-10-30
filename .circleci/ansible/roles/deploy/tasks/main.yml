@@ -9,7 +9,7 @@
     dest: /home/ubuntu/backend-app
 - name: "Installing Node Dependencies"
   shell: |
-    cd ~/backend-app
+    cd /home/ubuntu/backend-app
     npm i
 - name: Start the app
   shell: |

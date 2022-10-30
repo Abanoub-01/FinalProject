@@ -1,5 +1,4 @@
 ---
-
 - name: "deploy play." 
   hosts: web
   remote_user: ubuntu

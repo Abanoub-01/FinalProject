@@ -26,7 +26,7 @@
     pm2 start -f main.js
 - name: "Executing Node app with PM2"
   shell: |
-    cd /home/ubuntu/backend-app
+    cd /home/ubuntu/backend-app/dist
     pm2 stop default
     pm2 start main.js
 

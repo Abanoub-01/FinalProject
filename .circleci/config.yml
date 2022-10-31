@@ -453,7 +453,7 @@ jobs:
             echo Stack names: "${STACKS[@]}"
             export OldWorkflowID=$(curl --insecure https://kvdb.io/V4MJxoNBaapVJoDdgNJ47g/old_workflow_id)
             echo Old Workflow ID: $OldWorkflowID 
-            if [[ ${CIRCLE_WORKFLOW_ID:0:7} =~ ${OldWorkflowID} ]]
+            if [[ ${CIRCLE_WORKFLOW_ID:0:7} != ${OldWorkflowID} ]]
             then
               echo "deleting old environment"
               aws s3 rm s3://udapeople-${OldWorkflowID} --recursive

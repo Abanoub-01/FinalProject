@@ -407,7 +407,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/
-      -run:
+      - run:
         name: install dependencies
         command: |
           yum install -y tar gzip curl
